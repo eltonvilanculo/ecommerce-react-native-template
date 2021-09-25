@@ -7,7 +7,9 @@ import { getProducts } from '../services/ProductsService.js';
 export function ProductsList ({navigation}) {
 
   function renderProduct({item: product}) {
+
     return (
+
       <Product {...product} 
       onPress={() => {
         navigation.navigate('ProductDetails', {
@@ -44,4 +46,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     marginHorizontal: 8,
   },
+  searchBar:{
+    flex:1 ,
+  }
 });

@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import { ProductsList } from './screens/ProductsList.js';
 import { ProductDetails } from './screens/ProductDetails.js';
@@ -9,12 +10,25 @@ import { Cart } from './screens/Cart.js';
 import { CartIcon } from './components/CartIcon.js';
 import { CartProvider } from './CartContext.js';
 
+
+
 const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
+
 
 function App() {
   return (
     <CartProvider>
+ <NavigationContainer>
+      <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Screen name="Carros" component={ProductsList} />
+        <Drawer.Screen name="Celulares" component={ProductsList} />
+      </Drawer.Navigator>
+    </NavigationContainer>
+
       <NavigationContainer>
+
+        
         <Stack.Navigator>
           <Stack.Screen name='Products' component={ProductsList} 
           options={({ navigation }) => ({
