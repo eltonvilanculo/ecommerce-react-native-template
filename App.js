@@ -7,6 +7,8 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { ProductsList } from './screens/ProductsList.js';
 import { ProductDetails } from './screens/ProductDetails.js';
 import { Cart } from './screens/Cart.js';
+import {Carros} from './screens/Carros.js';
+import {Celular} from './screens/Celular.js';
 import { CartIcon } from './components/CartIcon.js';
 import { CartProvider } from './CartContext.js';
 
@@ -21,8 +23,8 @@ function App() {
     <CartProvider>
  <NavigationContainer>
       <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Carros" component={ProductsList} />
-        <Drawer.Screen name="Celulares" component={ProductsList} />
+        <Drawer.Screen name="Carros" component={Carros} />
+        <Drawer.Screen name="Celulares" component={Celular} />
       </Drawer.Navigator>
     </NavigationContainer>
 
